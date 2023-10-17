@@ -1,25 +1,37 @@
-import logo from './logo.svg';
+import React, { Component } from 'react'; 
 import './App.css';
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component { 
+  constructor() {
+    super();
+    this.state = { 
+      value: 0
+    };
+  }
+
+  increment = () => {
+    this.setState({
+      value: this.state.value + 1 
+    });
+  };
+
+  decrement = () => {
+    this.setState({
+      value: this.state.value - 1 
+    });
+  };
+
+  render() {
+    return (
+      <div className="App">
+        <p className="number">{this.state.value}</p>
+        <AddCircleOutlineIcon className='plus' style={{ fontSize: '5rem' }} onClick={this.increment}/>
+        <RemoveCircleOutlineIcon className='minus' style={{ fontSize: '5rem' }} onClick={this.decrement}/>
+      </div>
+    );
+  }
 }
 
 export default App;
