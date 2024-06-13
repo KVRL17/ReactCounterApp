@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
+import Game from './Rock_Paper_Scissor_Components/game';
 
 class App extends Component { 
   constructor() {
@@ -26,9 +27,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <p className="number">{this.state.value}</p>
+        <Game />
+        {/* <p className="number">{this.state.value}</p>
         <AddCircleOutlineIcon className='plus' style={{ fontSize: '5rem' }} onClick={this.increment}/>
-        <RemoveCircleOutlineIcon className='minus' style={{ fontSize: '5rem' }} onClick={this.decrement}/>
+        <RemoveCircleOutlineIcon className='minus' style={{ fontSize: '5rem' }} onClick={this.decrement}/> */}
       </div>
     );
   }
